@@ -17,14 +17,6 @@ rem
 rem -----------------------------------------------------------------------------
 rem These settings can be modified to fit the needs of your application
 rem Optimized for use with version 3.5.28 of the Wrapper.
-rem
-rem ********************************************************************
-rem  NOTE - This script has been modified to run the TestWrapper sample
-rem         application and should NOT be used as a base for your own
-rem         applications.  All of the documentation assumes that you are
-rem         working from the default source script:
-rem         WRAPPER_HOME/src/bin/App.bat.in
-rem ********************************************************************
 
 rem The base name for the Wrapper binary.
 set _WRAPPER_BASE=wrapper
@@ -47,7 +39,7 @@ rem _PASS_THROUGH tells the script to pass all parameters through to the JVM
 rem  as is.  
 rem  If _WRAPPER_CONF_OVERRIDE is specified then all parameters will be passed.
 rem  If not set then all parameters starting with the second will be passed.
-set _PASS_THROUGH=true
+rem set _PASS_THROUGH=true
 
 rem Do not modify anything beyond this point
 rem -----------------------------------------------------------------------------
@@ -138,9 +130,9 @@ shift
 if not [%1]==[] goto :parameters
 
 if not [%_PASS_THROUGH%]==[true] (
-    %_WRAPPER_EXE% -c %_WRAPPER_CONF%
+    %_WRAPPER_EXE% -i %_WRAPPER_CONF%
 ) else (
-    %_WRAPPER_EXE% -c %_WRAPPER_CONF% -- %_PARAMETERS%
+    %_WRAPPER_EXE% -i %_WRAPPER_CONF% -- %_PARAMETERS%
 )
 if not errorlevel 1 goto :eof
 pause

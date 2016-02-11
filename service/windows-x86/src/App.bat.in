@@ -29,7 +29,7 @@ set _WRAPPER_DIR=
 rem The name and location of the Wrapper configuration file. This will be used
 rem  if the user does not specify a configuration file as the first parameter to
 rem  this script.
-set _WRAPPER_CONF_DEFAULT=../../conf/sample-wrapper.conf
+set _WRAPPER_CONF_DEFAULT="../conf/%_WRAPPER_BASE%.conf"
 
 rem Makes it possible to override the Wrapper configuration file by specifying it
 rem  as the first parameter.
